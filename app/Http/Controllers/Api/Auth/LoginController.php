@@ -48,7 +48,7 @@ class LoginController extends Controller
                     'status' => true,
                     'message' => __('main.logged_in'),
                     'token' => $user->createToken($user->email)->plainTextToken,
-                ], 200);
+                ]);
             } else {
                 return response()->json([
                     'status' => false,
@@ -70,7 +70,7 @@ class LoginController extends Controller
 
         return response()->json([
             'status' => 'Ok',
-            'message' => 'Successfully logged out'
+            'message' => __('main.logged_out')
         ]);
     }
 }
